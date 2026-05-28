@@ -102,7 +102,7 @@ export const workExperience: WorkExperience[] = [
   {
     organization: "School Professionals",
     location: "Bronx, NY",
-    dateRange: "2025 – Present",
+    dateRange: "May 2026 – Present",
     roles: [
       {
         title: "Substitute Teacher",
