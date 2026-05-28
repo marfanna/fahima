@@ -1,11 +1,11 @@
 export const profile = {
   name: "Fahima Sultana",
-  tagline: "Sociologist · Researcher · Data Analyst",
+  tagline: "Sociologist · Researcher · PhD Candidate",
   location: "Bronx, NY",
   email: "fsltana1@memphis.edu",
   linkedin: "https://www.linkedin.com/in/fsltana",
   summary:
-    "Results-driven Sociology graduate with expertise in research, data analysis, and social theory. Experienced in procurement operations and international student services, with strong skills in vendor communication, compliance documentation, and customer support. Proven ability to manage cross-cultural interactions, streamline administrative processes, and deliver inclusive service in both academic and professional settings.",
+    "Fully-funded PhD student in the Community Research & Action Doctoral Program at Binghamton University. MA in Sociology from the University of Memphis with expertise in quantitative and qualitative research, health inequities, and social determinants of health. Experienced in research, procurement operations, and international student services with a proven ability to manage cross-cultural interactions and deliver inclusive service in academic and professional settings.",
   headshot: "/images/headshot.jpg",
 };
 
@@ -270,6 +270,7 @@ export interface Degree {
   institution: string;
   location: string;
   dateRange: string;
+  note?: string;
 }
 
 export interface Certificate {
@@ -280,6 +281,14 @@ export interface Certificate {
 }
 
 export const education: Degree[] = [
+  {
+    degree: "Doctor of Philosophy (Full Funding)",
+    field: "Community Research & Action",
+    institution: "Binghamton University",
+    location: "Binghamton, NY",
+    dateRange: "2026 – Present",
+    note: "Advisor: L. Mason-Williams, PhD — Director, Community Research & Action Doctoral Program · Associate Professor, Dept. of Teaching, Learning & Educational Leadership · College of Community & Public Affairs",
+  },
   {
     degree: "Master of Arts",
     field: "Sociology",

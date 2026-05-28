@@ -1,11 +1,12 @@
 import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Award, MapPin, Calendar } from "lucide-react";
 import { education, certificates } from "@/lib/data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Education",
-  description: "Academic degrees and certifications of Fahima Sultana — University of Memphis and Shahjalal University of Science and Technology.",
+  description: "Academic degrees and certifications of Fahima Sultana — PhD candidate at Binghamton University, MA Sociology from University of Memphis.",
 };
 
 export default function EducationPage() {
@@ -14,7 +15,7 @@ export default function EducationPage() {
       <div className="mb-10">
         <h1 className="font-serif text-4xl font-bold text-foreground">Education</h1>
         <p className="mt-3 text-muted-foreground">
-          Academic background in Sociology and Anthropology across two countries.
+          Academic background in Sociology, Anthropology, and Community Research across two countries.
         </p>
       </div>
 
@@ -30,14 +31,23 @@ export default function EducationPage() {
           <div className="flex flex-col gap-8">
             {education.map((deg, i) => (
               <div key={i} className="sm:pl-10 relative">
-                <div className="absolute left-0 top-1.5 h-6 w-6 rounded-full border-2 border-primary bg-background hidden sm:flex items-center justify-center">
-                  <div className="h-2 w-2 rounded-full bg-primary" />
+                {/* Timeline dot — solid for current, outline for past */}
+                <div className={`absolute left-0 top-1.5 h-6 w-6 rounded-full border-2 bg-background hidden sm:flex items-center justify-center ${i === 0 ? "border-primary" : "border-border"}`}>
+                  <div className={`h-2 w-2 rounded-full ${i === 0 ? "bg-primary" : "bg-border"}`} />
                 </div>
+
                 <div>
-                  <h3 className="font-serif text-lg font-semibold text-foreground">
-                    {deg.degree}, {deg.field}
-                  </h3>
-                  <p className="font-medium text-foreground/80 mt-0.5">{deg.institution}</p>
+                  <div className="flex flex-wrap items-center gap-2 mb-0.5">
+                    <h3 className="font-serif text-lg font-semibold text-foreground">
+                      {deg.degree}, {deg.field}
+                    </h3>
+                    {i === 0 && (
+                      <Badge variant="default" className="text-xs">
+                        In Progress
+                      </Badge>
+                    )}
+                  </div>
+                  <p className="font-medium text-foreground/80">{deg.institution}</p>
                   <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1 text-sm text-muted-foreground">
                     <span className="flex items-center gap-1">
                       <MapPin className="h-3.5 w-3.5" />
@@ -48,6 +58,11 @@ export default function EducationPage() {
                       {deg.dateRange}
                     </span>
                   </div>
+                  {deg.note && (
+                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed border-l-2 border-primary/30 pl-3 italic">
+                      {deg.note}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}
