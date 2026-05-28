@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Skills & Tools",
-  description: "Research tools, software, and language skills of Fahima Sultana — NVivo, RStudio, SPSS, and more.",
+  description: "Research tools, software, and language skills of Fahima Sultana — NVivo, RStudio, KoBo Toolbox, and more.",
 };
 
 export default function SkillsPage() {

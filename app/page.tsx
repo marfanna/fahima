@@ -42,7 +42,7 @@ const sections = [
     icon: Wrench,
     title: "Skills & Affiliations",
     description:
-      "Quantitative and qualitative tools — RStudio, NVivo, SPSS — and professional memberships including Alpha Kappa Delta.",
+      "Quantitative and qualitative tools — RStudio, NVivo, KoBo Toolbox — and professional memberships including Alpha Kappa Delta.",
     href: "/skills",
   },
 ];

@@ -341,7 +341,6 @@ export const skillGroups = [
     skills: [
       "NVivo",
       "RStudio / R",
-      "SPSS",
       "KoBo Toolbox",
     ],
   },
