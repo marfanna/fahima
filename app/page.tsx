@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Mail, ArrowRight } from "lucide-react";
+import { MapPin, Mail, ArrowRight, GraduationCap } from "lucide-react";
 import { LinkedInIcon } from "@/components/icons";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -64,6 +64,17 @@ export default function HomePage() {
             <div className="flex items-center justify-center md:justify-start gap-1.5 text-sm text-muted-foreground">
               <MapPin className="h-4 w-4 shrink-0" />
               <span>{profile.location}</span>
+            </div>
+
+            {/* PhD callout */}
+            <div className="flex items-center justify-center md:justify-start gap-2.5 rounded-lg border border-primary/20 bg-primary/5 px-4 py-2.5 w-fit">
+              <GraduationCap className="h-4 w-4 text-primary shrink-0" />
+              <p className="text-sm text-primary font-medium">
+                Currently pursuing PhD at{" "}
+                <Link href="/education" className="underline underline-offset-2 hover:text-primary/80 transition-colors">
+                  Binghamton University
+                </Link>
+              </p>
             </div>
 
             <p className="text-muted-foreground leading-relaxed max-w-xl">

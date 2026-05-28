@@ -282,12 +282,12 @@ export interface Certificate {
 
 export const education: Degree[] = [
   {
-    degree: "Doctor of Philosophy (Full Funding)",
+    degree: "Doctor of Philosophy",
     field: "Community Research & Action",
     institution: "Binghamton University",
     location: "Binghamton, NY",
     dateRange: "2026 – Present",
-    note: "Advisor: L. Mason-Williams, PhD — Director, Community Research & Action Doctoral Program · Associate Professor, Dept. of Teaching, Learning & Educational Leadership · College of Community & Public Affairs",
+    note: "Fully Funded Doctoral Fellowship · Advisor: L. Mason-Williams, PhD — Director, Community Research & Action Doctoral Program · Associate Professor, Dept. of Teaching, Learning & Educational Leadership · College of Community & Public Affairs",
   },
   {
     degree: "Master of Arts",
