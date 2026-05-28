@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Mail, ArrowRight, GraduationCap } from "lucide-react";
+import { MapPin, Mail, ArrowRight, GraduationCap, BookOpen, Briefcase, Wrench } from "lucide-react";
 import { LinkedInIcon } from "@/components/icons";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -15,6 +15,37 @@ export const metadata: Metadata = {
     description: profile.summary,
   },
 };
+
+const sections = [
+  {
+    icon: BookOpen,
+    title: "Research & Publications",
+    description:
+      "Conference papers, poster presentations, and quantitative studies on medical debt and health inequities.",
+    href: "/research",
+  },
+  {
+    icon: Briefcase,
+    title: "Professional Experience",
+    description:
+      "9+ years across research, academic administration, international education, and community development.",
+    href: "/experience",
+  },
+  {
+    icon: GraduationCap,
+    title: "Academic Background",
+    description:
+      "PhD at Binghamton University (fully funded) and MA degrees in Sociology and Anthropology.",
+    href: "/education",
+  },
+  {
+    icon: Wrench,
+    title: "Skills & Affiliations",
+    description:
+      "Quantitative and qualitative tools — RStudio, NVivo, SPSS — and professional memberships including Alpha Kappa Delta.",
+    href: "/skills",
+  },
+];
 
 export default function HomePage() {
   return (
@@ -117,7 +148,8 @@ export default function HomePage() {
 
       <Separator className="max-w-5xl mx-auto" />
 
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+      {/* Stats */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
             { value: "3", label: "Research Presentations" },
@@ -129,6 +161,39 @@ export default function HomePage() {
               <span className="font-serif text-3xl font-bold text-primary">{stat.value}</span>
               <span className="text-sm text-muted-foreground">{stat.label}</span>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <Separator className="max-w-5xl mx-auto" />
+
+      {/* Explore sections */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+        <h2 className="font-serif text-2xl font-semibold text-foreground mb-8 text-center md:text-left">
+          Explore
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {sections.map(({ icon: Icon, title, description, href }) => (
+            <Link
+              key={href}
+              href={href}
+              className="group flex flex-col gap-3 rounded-xl border border-border bg-card p-5 hover:border-primary/40 hover:shadow-md transition-all duration-200"
+            >
+              <div className="h-10 w-10 rounded-lg bg-primary/8 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors">
+                <Icon className="h-5 w-5 text-primary" />
+              </div>
+              <div className="flex flex-col gap-1.5 flex-1">
+                <h3 className="font-serif text-base font-semibold text-foreground leading-snug">
+                  {title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {description}
+                </p>
+              </div>
+              <div className="flex items-center gap-1 text-xs font-medium text-primary mt-auto">
+                View <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
           ))}
         </div>
       </section>
