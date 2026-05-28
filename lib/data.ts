@@ -100,6 +100,22 @@ export interface WorkExperience {
 
 export const workExperience: WorkExperience[] = [
   {
+    organization: "School Professionals",
+    location: "Bronx, NY",
+    dateRange: "2025 – Present",
+    roles: [
+      {
+        title: "Substitute Teacher",
+        type: "Teaching",
+        bullets: [
+          "Deliver classroom instruction across K–12 grade levels through School Professionals, a teacher staffing agency, adapting to diverse curricula and student needs.",
+          "Maintain classroom management and continuity of learning in the absence of regular teachers across multiple school settings.",
+          "Support students from diverse cultural and socioeconomic backgrounds, drawing on cross-cultural communication skills developed through academic and international work.",
+        ],
+      },
+    ],
+  },
+  {
     organization: "Department of Sociology, University of Memphis",
     location: "Memphis, TN",
     dateRange: "Aug 2023 – Aug 2025",
