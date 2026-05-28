@@ -76,8 +76,10 @@ export default function ContactForm() {
     return (
       <div className="flex flex-col items-center justify-center gap-3 py-12 text-center">
         <CheckCircle className="h-10 w-10 text-primary" />
-        <h3 className="font-serif text-xl font-semibold">Message sent!</h3>
-        <p className="text-sm text-muted-foreground">Fahima will be in touch soon.</p>
+        <h3 className="font-serif text-xl font-semibold">Thank you for reaching out!</h3>
+        <p className="text-sm text-muted-foreground max-w-xs">
+          Your message has been received. Fahima will review it and get back to you as soon as possible.
+        </p>
         <Button variant="outline" className="mt-2" onClick={() => { setStatus("idle"); setForm({ name: "", email: "", subject: "", message: "" }); setTouched({}); }}>
           Send another
         </Button>
