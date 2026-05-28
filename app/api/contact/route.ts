@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const TO_EMAIL = process.env.CONTACT_EMAIL ?? "fsltana1@memphis.edu";
-
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -17,6 +14,9 @@ export async function POST(req: NextRequest) {
     if (!name || !email || !subject || !message) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const TO_EMAIL = process.env.CONTACT_EMAIL ?? "fsltana1@memphis.edu";
 
     await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
