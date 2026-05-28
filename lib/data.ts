@@ -286,7 +286,7 @@ export const education: Degree[] = [
     field: "Community Research & Action",
     institution: "Binghamton University",
     location: "Binghamton, NY",
-    dateRange: "2026 – Present",
+    dateRange: "Aug 2026 – Present",
     note: "Fully Funded Doctoral Fellowship · Advisor: L. Mason-Williams, PhD — Director, Community Research & Action Doctoral Program · Associate Professor, Dept. of Teaching, Learning & Educational Leadership · College of Community & Public Affairs",
   },
   {
